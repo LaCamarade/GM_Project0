@@ -7,6 +7,6 @@ maxMP = 100;
 minHP = 0;
 minMP = 0;
 
-//пойманых призраков
+//gotcha_ghosts
 gotcha = 0;
 maxGotcha = 3;
