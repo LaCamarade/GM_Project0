@@ -1,0 +1,18 @@
+
+
+image_speed = 1;
+
+
+
+mp_linear_step(char.x,char.y,speedPx,true)//ищет путь к персонажу
+
+
+
+if collision_circle(x,y,100,charTrap0,false,false)
+    {
+
+        instance_destroy();
+    }
+
+
+

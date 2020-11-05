@@ -1,0 +1,72 @@
+//хитбокс персонажа по отношению к духу
+// с помощью этой штуки реализовать коллизию вместо нижней
+
+if collision_circle(x,y,35,spirit,false,false)
+{ 
+    if keyboard_check(vk_space)
+  {
+     spirit.sprite_index = sprite_hypnosisSpirit;
+     spirit.speedPx = 1;
+  }
+    else if !keyboard_check(vk_space)
+    {
+        spirit.sprite_index = sprite_Spirit;
+        spirit.speedPx = 5;
+        game_restart();
+    }
+}
+
+//if place_meeting(x+15,y+15,spirit){game_restart();}
+
+//передвижение
+upMove = (keyboard_check(ord("W")) || keyboard_check(vk_up));
+downMove = (keyboard_check(ord("S")) || keyboard_check(vk_down));
+rightMove = (keyboard_check(ord("D")) || keyboard_check(vk_right));
+leftMove = (keyboard_check(ord("A")) || keyboard_check(vk_left));
+
+if (upMove) {y -= 2; sprite_index = sprite_charMove; image_speed = 1;}
+if (downMove) {y += 2; sprite_index = sprite_charMove; image_speed = 1;}
+if (leftMove) {x -= 2; sprite_index = sprite_charMove; image_speed = 1;}
+if (rightMove) {x += 2; sprite_index = sprite_charMove; image_speed = 1;}
+
+if (!upMove and !downMove and !leftMove and !rightMove) {image_speed = 0;}
+
+
+
+//игра на флейте, расход маны, анимация игры на флейте
+if keyboard_check(vk_space)
+    {
+      MP -= 1;
+      sprite_index = sprite_charFlute;
+      image_speed = 1;
+    }
+else 
+     {
+        {
+         if ( MP < maxHP ) 
+            {
+             MP += 1;
+            } 
+        } 
+     }
+     
+if (MP < minMP)
+    { 
+     MP += 1;
+     sprite_index = sprite_charMove;
+     image_speed = 0;
+    }
+        if (!keyboard_check(vk_space))
+        {
+         sprite_index = sprite_charMove;
+        }
+
+
+//отобразить статы в виде интерфейса (нарисовать полосы)
+
+//установка ловушки
+
+if keyboard_check((ord("F")))
+    {
+     instance_create(char.x,char.y,charTrap0)
+    }

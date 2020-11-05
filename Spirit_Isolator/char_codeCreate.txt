@@ -1,0 +1,12 @@
+HP = true;
+MP = 100;
+
+maxHP = 100;
+maxMP = 100;
+
+minHP = 0;
+minMP = 0;
+
+//пойманых призраков
+gotcha = 0;
+maxGotcha = 3;
