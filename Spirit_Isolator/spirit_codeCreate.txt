@@ -1,3 +1,2 @@
 HP = true;
-
-speedPx = 5
+speedPx = 5;

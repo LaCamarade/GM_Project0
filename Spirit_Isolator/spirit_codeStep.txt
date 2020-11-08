@@ -1,13 +1,9 @@
-
-
 image_speed = 1;
 
+//ищет путь к персонажу
+mp_linear_step(char.x,char.y,speedPx,true)
 
-
-mp_linear_step(char.x,char.y,speedPx,true)//ищет путь к персонажу
-
-
-
+//столкновение с ловушкой
 if collision_circle(x,y,100,charTrap0,false,false)
     {
 
